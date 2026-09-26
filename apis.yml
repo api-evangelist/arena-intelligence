@@ -1,23 +1,74 @@
 aid: arena-intelligence
+
 name: Arena Intelligence
-description: 'Arena Intelligence is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://arena-intelligence.com/opengraph-image?b1acbf89a3508892
+
+description: 'Arena Intelligence provides intelligence software for organizations involved in policy advocacy, campaign management, and government affairs. Their platform offers modular solutions across six arenas—Congress, Campaign, State, Advocacy, Affairs, and Communications—designed to streamline briefing, messaging, and legislative tracking for congressional offices, campaign teams, state legislators, advocacy groups, and government affairs professionals.'
+
 url: https://raw.githubusercontent.com/api-evangelist/arena-intelligence/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
 - Company
-apis: []
+- Policy
+- Advocacy
+- Campaign
+- Government
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: SecurityTxt
+  url: well-known/arena-intelligence-security.txt
+- type: SecurityTxt
+  url: well-known/arena-intelligence-clarity-security.txt
+- type: WellKnown
+  url: well-known/arena-intelligence-well-known.yml
+- type: Security
+  url: https://clarity.com/vdp
+- type: Hosts
+  url: hosts/arena-intelligence-hosts.yml
+- type: Vendors
+  url: vendors/arena-intelligence-vendors.yml
+- type: VulnerabilityDisclosure
+  url: security/arena-intelligence-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/arena-intelligence-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/arena-intelligence-stock
+  url: https://arena.ai
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: "No OpenAPI, AsyncAPI, GraphQL, or other machine-readable contract found on discovered hosts."
+  evidence:
+    - url: https://api.arena-intelligence.com/openapi.json
+      status: 404
+    - url: https://arena-intelligence.com/openapi.json
+      status: 404
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
